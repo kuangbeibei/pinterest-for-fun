@@ -5,7 +5,7 @@ import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [winWidth, setWinWidth] = useState<number | undefined>(undefined);
-  const [asideWidth, setAsideTranslateX] = useState<number>(0);
+  const [asideWidth, setAsideTranslateX] = useState<number>(200); // 小屏优先，先设置一个宽度一面小屏先看到
   const [headerHeight, setHeaderHeight] = useState<number>(0);
   const [scrollTop, setScrollTop] = useState<number>(0);
 
@@ -29,8 +29,6 @@ function MyApp({ Component, pageProps }: AppProps) {
       window.removeEventListener('scroll', handleScroll)
     }
   }, [])
-  
-
 
   return <LayoutContext.Provider value={{
     winWidth,

@@ -1,5 +1,11 @@
 
 import Masonry from "react-masonry-css";
+import Pin from "./Pin";
+import { IPost } from 'type';
+
+interface Props {
+    pins: IPost[]
+}
 
 const breakPoints = {
     default: 4,
@@ -10,22 +16,14 @@ const breakPoints = {
     '500': 1
 }
 
-export default function MasonryLayout() {
+export default function MasonryLayout({
+    pins
+}: Props) {
     return (
         <Masonry className="flex space-x-4" breakpointCols={breakPoints}>
-            <div style={{ marginBottom: '1rem' }}>I am the first I am the first I am the first I am the first I am the first I am the first I am the first I am the first I am the first I am the first I am the first I am the first </div>
-            <div style={{ marginBottom: '1rem' }}>I am the first I am the fiI am the first I am the first I am the first  am the first I am the first I am the firs  am the first I am the first I am the firs am the first I am the first I am the firs am the first I am the first I am the firs am the first I am the first I am the firs am the first I am the first I am the firs am the first I am the first I am the firs </div>
-            <div style={{ marginBottom: '1rem' }}>I am the first Ir</div>
-            <div style={{ marginBottom: '1rem' }}>I am the first I am the first I am the first I am the first I am the first I am the first I am the first I am the first I am the first I am the first I am the first I am the first </div>
-            <div style={{ marginBottom: '1rem' }}>I am the first I am the first I am the first I am the first I am the first I am the first I am the first I am the first I am the firste first I am the first Ie first I am the first I I am the first I am the first I am the first </div>
-            <div style={{ marginBottom: '1rem' }}>I am the first I am the first I am the first I am the first I am the first I am the first I am the first I am the first I am the first I am the first I am the first I am the first </div>
-            <div style={{ marginBottom: '1rem' }}>I am the first I am the first I am the first I am the first I am the first I am the first I am the first I am the first I am the firste first I am the first Ie first I am the first I I am the first I am the first I am the first first I am the firste first I am the first Ie first I am the first I I am the first I am the first I am the first</div>
-            <div style={{ marginBottom: '1rem' }}>I am the first I am the first I am the first I am the first I am the first I am the first I am the first I am the first I am the firste first I am the first Ie first I am the first I I am the first I am the first I am the first first I am the firste first I am the first Ie first I am the first I I am the first I am the first I am the first m the firste first I am the first Ie first I am the first I I am the first I am the first I am the first f</div>
-            <div style={{ marginBottom: '1rem' }}>I am the first I am the first I am the first I am the first I am the first I am the first I am the first I am the first I am the firste first I am the first Ie first I am the first I I am the first I am the first I am the first first I am the firste first I am the first Ie first I am the first I I am the first I am the first I am the first m the firste first I am the first Ie first I am the first I I am the first I am the first I am the first f</div>
-            <div style={{ marginBottom: '1rem' }}>I am the first I am the first I am the first I am the first I am the first I am the first I am the first I am the first I am the firste first I am the first Ie first I am the first I I am the first I am the first I am the first first I am the firste first I am the first Ie first I am the first I I am the first I am the first I am the first</div>
-            <div style={{ marginBottom: '1rem' }}>I am the first I am the first I am the first I am the first I am the first I am the first I am the first I am the first I am the first I am the first I am the first I am the first </div>
-            <div style={{ marginBottom: '1rem' }}>I am the first I am the first I am the first I am the first I am the first I am the first I am the first I am the first I am the firste first I am the first Ie first I am the first I I am the first I am the first I am the first first I am the firste first I am the first Ie first I am the first I I am the first I am the first I am the first m the firste first I am the first Ie first I am the first I I am the first I am the first I am the first f</div>
-            <div style={{ marginBottom: '1rem' }}>I am the first I am the first I am the first I am the first I am the first I am the first I am the first I am the first I am the first I am the first I am the first I am the first </div>
+            {
+                pins.map((pin: IPost) => <Pin key={pin._id} pin={pin} />)
+            }
         </Masonry>
     )
 }

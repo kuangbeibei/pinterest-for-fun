@@ -5,3 +5,4 @@ export { default as Pin } from "./Pin";
 export { default as MasonryLayout } from "./Masonry";
 export { default as AddPinBtn } from "./AddPinBtn";
 export { default as BackToTop } from "./BackToTop";
+export { default as Avatar} from "./Avatar"
